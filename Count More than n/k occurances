@@ -1,0 +1,23 @@
+
+
+class Solution 
+{
+    public int countOccurence(int[] arr, int n, int k) 
+    {
+        int requiredCount=n/k;
+       HashMap<Integer,Integer> frequency=new HashMap<>();
+       for(int num:arr)
+       {
+           frequency.put(num,frequency.getOrDefault(num,0)+1);
+       }
+       int count=0;
+       for(int value : frequency.values())
+       {
+           if(value>requiredCount)
+           {
+               count++;
+           }
+       }
+       return count;
+    }
+}
